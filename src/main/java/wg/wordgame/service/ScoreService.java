@@ -9,6 +9,12 @@ import org.springframework.stereotype.Service;
 @Scope("singleton")
 public class ScoreService {
 	
+	 /**
+     * Calculate the score for the entered word.
+     * 
+     * @param word
+     * @return long
+     * */
 	public long getWordScore(String word) {
 		long letterScore = this.getScoreByDistinctLetters(word);
 		
@@ -25,6 +31,12 @@ public class ScoreService {
 		return word.chars().distinct().count();
 	}
 	
+	 /**
+     * Test whether or not the word is palindrome.
+     * 
+     * @param word
+     * @return boolean
+     * */
 	private boolean isPalindrome(String word) {
 	    String clean = word.replaceAll("\\s+", "").toLowerCase();
 	    int length = clean.length();
@@ -39,6 +51,12 @@ public class ScoreService {
 	    return true;
 	}
 
+	 /**
+     * Test whether or not the word is almost palindrome by removing one character.
+     * 
+     * @param word
+     * @return boolean
+     * */
 	private static boolean isAlmostPalindrome(String word)
 	{     
 	    int n = word.length();

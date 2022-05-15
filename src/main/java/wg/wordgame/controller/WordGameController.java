@@ -55,7 +55,6 @@ public class WordGameController {
 			wordGameResponseDto.setMessage("Word successfully added!");
 			wordGameResponseDto.setWordDTO(model.asDTO());
 			return new ResponseEntity<WordGameResponseDTO>(wordGameResponseDto, HttpStatus.CREATED);
-//			return ResponseEntity.ok(model.asDTO());
 		} else {
 			wordGameResponseDto.setMessage("Entered word is not in English dictionary. Try again.");
 			return new ResponseEntity<WordGameResponseDTO>(wordGameResponseDto, HttpStatus.BAD_REQUEST);
